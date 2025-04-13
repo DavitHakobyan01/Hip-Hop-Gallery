@@ -83,6 +83,7 @@ nav input[type="text"]::placeholder {
 .button-group {
   display: flex;
   gap: 10px;
+  margin-left: 10px;
 }
 .button-group button {
   padding: 10px 20px;
