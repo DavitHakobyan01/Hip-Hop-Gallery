@@ -47,3 +47,22 @@ header h1 {
   text-shadow: 2px 2px 0 #000;
 }
 
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav input[type="text"] {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'GameBattle', sans-serif;
+  font-size: 1em;
+  background: #555;
+  color: #fff;
+}
+nav input[type="text"]::placeholder {
+  color: #aaa;
+}
+
