@@ -1,70 +1,19 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.main-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
-}
-
-.title {
-  text-align: center;
-  margin: 0;
-  font-size: 8em;
-  font-family: "Helvetica";
+@font-face {
+  font-family: 'CustomFont'; /* Use a name that you prefer */
+  src: url('assets/fonts/GameBattlesRegular-RjXo.ttf') format('woff2'), /* Preferred modern format */
+       url('assets/fonts/Mostwasted.ttf') format('woff'),   /* Fallback format */
+       url('assets/fonts/UrbanJungleDEMO.otf') format('truetype'); /* Additional fallback */
   font-weight: normal;
-  color: white;
+  font-style: normal;
+  font-display: swap; /* Optional: helps with performance by using fallback text until the font loads */
 }
 
-#card-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
+{
+margin: 0;
 }
 
-.card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
+body {
+  font-family: 'CustomFont', sans-serif;
 }
 
-.card-content {
-  padding: 20px;
-  font-family: "Verdana";
-  color: #777;
-}
 
-.card-content h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 10px;
-}
-
-button {
-  text-align: center;
-  background-color: #666;
-  border: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 40px;
-  border-radius: 10px;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-  margin: 5px;
-}
