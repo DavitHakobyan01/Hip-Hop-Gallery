@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'GameBattle';
   src: url('../assets/fonts/GameBattlesRegular-RjXo.ttf') format('truetype');
@@ -24,5 +23,10 @@
 }
 
 body {
-  background-color: blue;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  font-family: 'GameBattle', sans-serif;
 }
+
