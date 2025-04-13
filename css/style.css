@@ -30,3 +30,20 @@ body {
   font-family: 'GameBattle', sans-serif;
 }
 
+header {
+  background-color: #333; /* Solid color instead of background image */
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 3px solid #ffcc00;
+  position: relative;
+}
+header h1 {
+  margin: 0;
+  font-family: 'UrbanJungle', sans-serif;
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 0 #000;
+}
+
