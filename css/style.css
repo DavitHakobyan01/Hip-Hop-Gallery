@@ -1,0 +1,28 @@
+/* Regular */
+@font-face {
+  font-family: 'GameBattle';
+  src: url('assets/fonts/GameBattlesRegular-RjXo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'MostWasted';
+  src: url('assets/fonts/Mostwasted.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'UrbanJungle';
+  src: url('assets/fonts/UrbanJungleDEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
