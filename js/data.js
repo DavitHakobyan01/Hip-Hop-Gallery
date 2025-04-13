@@ -14,7 +14,7 @@ const artists = [
       funFact: "She started her career on a Nickelodeon show called *Victorious*."
     },
     {
-      name: "A$AP Rocky",
+      name: "Asap Rocky",
       age: 36,
       popularSong: "Praise the Lord (Da Shine)",
       hometown: "Harlem, New York",
@@ -213,7 +213,7 @@ const artists = [
       funFact: "She’s not only a music icon but also a billionaire businesswoman thanks to Fenty Beauty.",
     },
     {
-      name: "Rosé",
+      name: "Rose",
       age: 27,
       popularSong: "On The Ground",
       hometown: "Auckland, New Zealand",
@@ -262,7 +262,7 @@ const artists = [
       funFact: "He founded the music label Cactus Jack Records and is known for his psychedelic sound.",
     },
     {
-      name: "Ty Dolla $ign",
+      name: "Ty Dolla Sign",
       age: 42,
       popularSong: "Paranoid",
       hometown: "Los Angeles, California",
@@ -289,19 +289,6 @@ const artists = [
       hometown: "Atlanta, Georgia",
       funFact: "He’s known for his eccentric fashion and vocal style, and helped launch the careers of Gunna and Lil Baby.",
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ];
