@@ -31,7 +31,7 @@ body {
 }
 
 header {
-  background-color: #333; /* Solid color instead of background image */
+  background-color: #333;
   padding: 30px 20px;
   text-align: center;
   border-bottom: 3px solid #ffcc00;
@@ -92,4 +92,26 @@ main {
   width: 100%;
   height: auto;
   border-radius: 5px;
+}
+
+.catalog-item h2 {
+  margin: 10px 0 5px 0;
+  font-family: 'MostWasted', sans-serif;
+  font-size: 1.8em;
+  color: #ff0000;
+  text-transform: uppercase;
+}
+.catalog-item p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+footer {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  color: #777;
+  font-size: 0.9em;
+  border-top: 2px solid #ffcc00;
 }
