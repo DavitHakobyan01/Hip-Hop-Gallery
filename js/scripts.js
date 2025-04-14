@@ -44,3 +44,28 @@ searchButton.addEventListener('click', function () {
     }
   }
 });
+
+addButton.addEventListener('click', function () {
+  window.open('add.html', 'AddArtist', 'width=400,height=500');
+});
+
+window.addEventListener('message', function (event) {
+  const artist = event.data;
+
+  artists.push(artist);
+
+  const card = document.createElement('div');
+  card.classList.add('artist-card');
+
+  card.innerHTML = `
+    <img src="${artist.imageData}" alt="${artist.name}">
+    <h3>${artist.name}</h3>
+    <p><strong>Popular Song:</strong> ${artist.song}</p>
+    <p><strong>Age:</strong> ${artist.age}</p>
+    <p><strong>From:</strong> ${artist.origin}</p>
+    <p><strong>Fun Fact:</strong> ${artist.funFact}</p>
+  `;
+
+  container.appendChild(card);
+});
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Artist</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    input {
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 95%;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      padding: 8px 12px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Add New Artist</h2>
+<form id="addArtistForm">
+  <input type="text" id="nameInput" placeholder="Artist Name" required><br>
+  <input type="text" id="songInput" placeholder="Popular Song" required><br>
+  <input type="number" id="ageInput" placeholder="Age" required><br>
+  <input type="text" id="originInput" placeholder="Origin" required><br>
+  <input type="text" id="funFactInput" placeholder="Fun Fact" required><br>
+  <label>Upload Image:</label><br>
+  <input type="file" id="imageInput" accept="image/*" required><br>
+  <button type="submit">Add Artist</button>
+</form>
+
+
+<script>
+  const form = document.getElementById('addArtistForm');
+  const imageInput = document.getElementById('imageInput');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const reader = new FileReader();
+    const file = imageInput.files[0];
+
+    if (!file) return;
+
+    reader.onload = function () {
+      const artist = {
+        name: document.getElementById('nameInput').value,
+        song: document.getElementById('songInput').value,
+        age: document.getElementById('ageInput').value,
+        origin: document.getElementById('originInput').value,
+        funFact: document.getElementById('funFactInput').value,
+        imageData: reader.result // base64 image data
+      };
+
+      window.opener.postMessage(artist, '*');
+      window.close();
+    };
+
+    reader.readAsDataURL(file);
+  });
+</script>
+
+</body>
+</html>
