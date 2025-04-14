@@ -241,7 +241,7 @@ const artists = [
       funFact: "She’s the first artist to win Album of the Year at the Grammys four times.",
     },
     {
-      name: "The Kid LAROI",
+      name: "The Kid Laroi",
       age: 20,
       popularSong: "Stay",
       hometown: "Sydney, Australia",
