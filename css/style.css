@@ -152,6 +152,17 @@ main {
   color: white;
 }
 
+.remove-checkbox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transform: scale(1.2);
+}
+.artist-card {
+  position: relative;
+}
+
+
 
 
 footer {

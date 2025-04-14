@@ -8,14 +8,16 @@ for (let i = 0; i < artists.length; i++) {
   const card = document.createElement('div');
   card.classList.add('artist-card');
 
-  card.innerHTML = `
-    <img src="assets/img/${artist.name}.jpg" alt="${artist.name}">
-    <h3>${artist.name}</h3>
-    <p><strong>Popular Song:</strong> ${artist.popularSong}</p>
-    <p><strong>Age:</strong> ${artist.age}</p>
-    <p><strong>From:</strong> ${artist.hometown}</p>
-    <p><strong>Fun fact::</strong> ${artist.funFact}</p>
-  `;
+card.innerHTML = `
+  <input type="checkbox" class="remove-checkbox" style="display: none;">
+  <img src="${artist.imageData || `assets/img/${artist.name}.jpg`}" alt="${artist.name}">
+  <h3>${artist.name}</h3>
+  <p><strong>Popular Song:</strong> ${artist.popularSong}</p>
+  <p><strong>Age:</strong> ${artist.age}</p>
+  <p><strong>From:</strong> ${artist.hometown}</p>
+  <p><strong>Fun Fact:</strong> ${artist.funFact}</p>
+`;
+
 
   container.appendChild(card);
 }
@@ -68,4 +70,47 @@ window.addEventListener('message', function (event) {
 
   container.appendChild(card);
 });
+
+let removeMode = false;
+
+removeButton.addEventListener('click', function () {
+  const checkboxes = document.querySelectorAll('.remove-checkbox');
+  const cards = document.querySelectorAll('.artist-card');
+
+  if (!removeMode) {
+    removeMode = true;
+    removeButton.textContent = 'Confirm Remove';
+
+    checkboxes.forEach(cb => {
+      cb.style.display = 'inline-block';
+      cb.checked = false;
+    });
+
+  } else {
+    checkboxes.forEach((checkbox, index) => {
+      if (checkbox.checked) {
+        const name = cards[index].querySelector('h3').textContent;
+
+        cards[index].remove();
+
+        for (let i = 0; i < artists.length; i++) {
+          if (artists[i].name === name) {
+            artists.splice(i, 1);
+            break;
+          }
+        }
+      }
+    });
+
+    removeMode = false;
+    removeButton.textContent = 'Remove';
+
+    const remainingCheckboxes = document.querySelectorAll('.remove-checkbox');
+    remainingCheckboxes.forEach(cb => {
+      cb.style.display = 'none';
+      cb.checked = false;
+    });
+  }
+});
+
 
