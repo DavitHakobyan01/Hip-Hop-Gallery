@@ -22,12 +22,23 @@
   font-display: swap;
 }
 
+#catalogContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #1a1a1a;
+  background: url('../assets/img/graffiti-wall.png') no-repeat center center fixed;
+  background-size: cover;
   color: #f0f0f0;
   font-family: 'GameBattle', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
 
 header {
@@ -65,40 +76,37 @@ nav input[type="text"] {
 nav input[type="text"]::placeholder {
   color: #aaa;
 }
-.search-group button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-family: 'GameBattle', sans-serif;
-  font-size: 1em;
-  background-color: #ffcc00;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-.search-group button:hover {
-  background-color: #ffdd55;
-}
 
-.button-group {
-  display: flex;
-  gap: 10px;
-  margin-left: 10px;
-}
+
+.search-group button,
 .button-group button {
   padding: 10px 20px;
+  margin-left: 10px;
+  margin-right: 10px
   border: none;
   border-radius: 5px;
   font-family: 'GameBattle', sans-serif;
   font-size: 1em;
-  cursor: pointer;
   background-color: #ffcc00;
-  color: #333;
-  transition: background-color 0.2s;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00 inset;
 }
+
+.search-group button:hover,
 .button-group button:hover {
-  background-color: #ffdd55;
+  background-color: #fff200;
+  color: #000;
+  box-shadow: 0 0 15px #ffcc00, 0 0 25px #ffcc00 inset;
+  transform: scale(1.05);
 }
+
+.search-group button:active,
+.button-group button:active {
+  transform: scale(0.95);
+}
+
 
 main {
   padding: 20px;
@@ -111,33 +119,24 @@ main {
   gap: 20px;
 }
 
-.catalog-item {
+.artist-card {
   background-color: #292929;
   border: 2px solid #ffcc00;
   border-radius: 8px;
   padding: 15px;
-  transition: transform 0.2s ease-in-out;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  font-size: 16px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  animation: floatCard 3s ease-in-out infinite;
 }
-.catalog-item:hover {
+
+
+.artist-card:hover {
   transform: scale(1.05);
-}
-
-.catalog-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.catalog-item h2 {
-  margin: 10px 0 5px 0;
-  font-family: 'MostWasted', sans-serif;
-  font-size: 1.8em;
-  color: #ff0000;
-  text-transform: uppercase;
-}
-.catalog-item p {
-  margin: 5px 0;
-  line-height: 1.5;
+  box-shadow: 0 0 20px #ffcc00;
+  border-color: #fff200;
 }
 
 .artist-card img {
@@ -145,12 +144,14 @@ main {
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.artist-card {
-  font-family: 'Most Wasted', cursive;
-  font-size: 16px;
-  color: white;
+
+.artist-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffcc00;
 }
+
 
 .remove-checkbox {
   position: absolute;
@@ -173,4 +174,66 @@ footer {
   color: #777;
   font-size: 0.9em;
   border-top: 2px solid #ffcc00;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-group,
+  .button-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .artist-card {
+    font-size: 14px;
+  }
+
+  .artist-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  #searchInput,
+  #searchButton,
+  .button-group button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .search-group {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+}
+
+
+@keyframes floatCard {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
 }
