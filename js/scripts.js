@@ -68,10 +68,11 @@ window.addEventListener('message', function (event) {
   card.innerHTML = `
     <img src="${artist.imageData}" alt="${artist.name}">
     <h3>${artist.name}</h3>
-    <p><strong>Popular Song:</strong> ${artist.song}</p>
+    <h3>${artist.name}</h3>
+    <p><strong>Popular Song:</strong> ${artist.popularSong}</p>
     <p><strong>Age:</strong> ${artist.age}</p>
-    <p><strong>From:</strong> ${artist.origin}</p>
-    <p><strong>Fun Fact:</strong> ${artist.funFact}</p>
+    <p><strong>From:</strong> ${artist.hometown}</p>
+    <p><strong>Fun fact::</strong> ${artist.funFact}</p>
   `;
 
   container.appendChild(card);
@@ -149,10 +150,10 @@ sortButton.addEventListener('click', function () {
       <input type="checkbox" class="remove-checkbox" style="display: none;">
       <img src="${artist.imageData || `assets/img/${artist.name}.jpg`}" alt="${artist.name}">
       <h3>${artist.name}</h3>
-      <p><strong>Popular Song:</strong> ${artist.song}</p>
+      <p><strong>Popular Song:</strong> ${artist.popularSong}</p>
       <p><strong>Age:</strong> ${artist.age}</p>
-      <p><strong>From:</strong> ${artist.origin}</p>
-      <p><strong>Fun Fact:</strong> ${artist.funFact}</p>
+      <p><strong>From:</strong> ${artist.hometown}</p>
+      <p><strong>Fun fact::</strong> ${artist.funFact}</p>
     `;
 
     container.appendChild(card);
